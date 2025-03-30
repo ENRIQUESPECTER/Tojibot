@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50">
+    <p></p>
+    <main class="flex-1 w-screen overflow-x-auto">
+        <!--Se hace el contenedor para el boton del chat bot en la parte inferior derecha-->
+        <div id="chat-container" class="fixed bottom-4 right-4 flex flex-col items-end">
+            <button id="chat-toogle" class="bg-blue-600 text-white border-t">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX0x2tBQ8PrVdwiNuZx1axWW-8_5cWHo9BpA&s" height="170px" width="170px">
+            </button>
+
+            <!--Se crea la ventana del Chat que se abre mediante el icono-->
+            <div id="chat-box" class="hidden w-80 bg-white rounded-lg shadow-lg mt-2" style="z-index: 999;">
+                <div class="bg-blue-600 text-white pg-3 felx justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full" role="img" aria-label="Avatar del Bot"
+                        style="background: url(/static/Tojiicon.JPG);">
+                        </div>
+                        <div><button id="close-chat" class="block text-lg font-bold " style="margin-left: 250px;">X</button>
+                            <span class="text-lg font-semibold">TOJIBOT</span>
+                            <span class="block text-sm opacity-75" style="margin-bottom: 9px;">Siempre Activo</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--Se hace el apartado de mensajes dentro de la ventana del chat bot-->
+                <div id="chat-messages" class="p-3 overflow-y-auto text-sm" style="height: 400px;">
+                    <p id="valida" class="text-gray-600 italic">Al usar este chat, aceptas que eres mayor de edad y solo sera usado para fines infromativos de Ciencias de la Salud</p>
+                </div>
+                <!--Se diseña la barra de entrada del mensaje-->
+                <div class="border-t p-2 flex">
+                    <input id="chat-input" type="text" class="flex-1 p-2 border rounded-l" placeholder="Escribe tu consulta aquí">
+                    <button id="send-btn" class="bg-blue-600 text-white px-4 rounded-r">></button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+<script src="/static/funciones.js">
+</script>
+</body>
+</html>
